@@ -7,11 +7,13 @@ module Movile
 
     def initialize(attributes)
       super
-      @options['UserName'] = attributes[:username]
-      @options['AuthenticationToken'] = attributes[:authentication_token]
+      @options['UserName'] = attributes.dig(:username)
+      @options['AuthenticationToken'] = attributes.dig(:authentication_token)
     end
 
     def send_message(number, text)
+      return 'Error authenticating the request' unless @options.all?
+
       if valid_message?(number, text)
         body = { 'destination' => number, 'messageText' => text }.to_json
         response = self.class.post(base_api_url, headers: @options, body: body)
