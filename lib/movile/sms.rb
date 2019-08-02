@@ -3,7 +3,7 @@
 require 'json'
 require 'byebug'
 require 'httparty'
-require 'smshelper'
+require_relative 'sms_helper'
 
 module Movile
   class SMS < Movile::SmsHelper
