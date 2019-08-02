@@ -1,7 +1,6 @@
 require 'byebug'
-# lib/movile
+
 module Movile
-  # lib/movile/sms.rb
   class SMS < Movile::SmsHelper
     include HTTParty
 
