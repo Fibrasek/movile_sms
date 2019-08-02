@@ -2,7 +2,7 @@ require 'byebug'
 
 module Movile
   class SMS < Movile::SmsHelper
-    include HTTParty
+    include ::HTTParty
 
     def initialize(attributes)
       super
