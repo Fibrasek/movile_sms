@@ -1,4 +1,9 @@
+# frozen_string_literal: true
+
+require 'json'
 require 'byebug'
+require 'httparty'
+require 'smshelper'
 
 module Movile
   class SMS < Movile::SmsHelper
